@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="hello">안녕하세요</h1>
+  <h1 id="hi">JS 초보예요</h1>
+
+  <script>/*js쓰려면 html에 script만들면됨*/
+    document.getElementById('hello').innerHTML='안녕';
+    //문서 .(~의) html요소를 가져와라 ('아이디가 hello인') .(~의) html안의 내용을 // 등호 = 같다는 뜻이 x, 오른쪽을 왼쪽에 넣으라는 뜻 <= 이 뜻임*/
+    /*위의 h1 안녕하세요를 안녕으로 바꿔서 출력 id=hello로 연결*/
+    // document.getElementById('??').innerHTML='??';  (어떤것을,어떻게)
+    document.getElementById('hello').style.color='red'; 
+    document.getElementById('hello').style.fontSize='16px'; 
+    //hello를 red로 변경 
+    document.getElementById('hi').innerHTML='JS 고수예요';
+    //코드 길게 짜는 이유? -프로그래밍은 컴퓨터에게 일시키는 행위(지금 HTML 바꾸라고 일시키는 중임)
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+.alert-box{
+  background: skyblue;
+  padding:20px;
+  color:white;
+  border-radius: 5px;
+  display: none;
+  /*js로 버튼 눌렀을때 나오게 하기 위해서 평소에는 none으로 숨기고, 만약에 그냥 드러내고 싶으면 block처리하면됨*/
+}

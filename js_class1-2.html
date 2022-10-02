@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/js_class1-2.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="alert-box" id="alert">알림창
+    <!-- <button onclick="document.getElementById('alert').style.display='none';">닫기</button> -->
+    <button onclick="closeAlert()">닫기</button>
+  </div>
+  <!-- <button onclick="document.getElementById('alert').style.display='block';">열기</button> -->
+  <button onclick="알림창열기()">열기</button>
+  <!-- document.getElementById('??').innerHTML='??';  (어떤것을,어떻게) -->
+  
+
+  <script>
+    function 알림창열기(){
+      document.getElementById('alert').style.display='block';
+    }
+    //(함수)function 문법 >> 긴 코드 축약하고 싶을 때 function 꺼내서 씀(긴 코드 재사용이 잦을때도 편리)
+    //저 function의 작명()을 oneclick안에 갖다 쓰면, 그 자리에 {}가 남음
+    //-함수명 영어작명시엔 1. 소문자시작 2.camelcase
+    //_언더바 x , 띄어쓰기 x
+    function closeAlert(){
+      document.getElementById('alert').style.display='none';
+    }
+    //JS자주발생하는 오류
+    //1. 조작할 html의 하단에 코드짜야 잘 동작함.
+    //2. 셀렉터 오타 주의 (ex) alert인데 alert1로 잘못) >> 크롬 개발자도구에서 console이용해서 에러 찾기
+    //null : 텅비어있음
+    //3. 그냥 기본문법 오타 : 실수로 대문자를 소문자로 쓰던지 등등.. 예방하기위해서 자동완성 이용하거나 console 이용해서 오류 찾기
+</script>
+
+
+
+</body>
+</html>
