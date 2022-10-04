@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/js_class1-2.css" rel="stylesheet">
+  <title>1-3-2</title>
+</head>
+<body>
+  <div class="alert-box" id="alert">
+    <p id="title">알림창</p>
+    <button onclick="아이디알림창('','none')">닫기</button>
+  </div>
+  <button onclick="아이디알림창('아이디입력','block')">버튼1</button>
+  <button onclick="아이디알림창('비번입력','block')">버튼2</button>
+  
+  <script>
+    // function 알림창열기(구멍){
+    //   document.getElementById('title').innerHTML='아이디 입력';
+    //   //1.p태그 내용을 아이이디 입력으로 바꿈
+    //   document.getElementById('alert').style.display=구멍;
+    //   //2. 알림창을 띄움
+    // 어떻게 동작할지를 먼저 한글로 구상해보고 코드짜기
+
+    //selfcheck
+
+    function 아이디알림창(알림창글, 오잉){
+      document.getElementById('title').innerHTML = 알림창글;
+      document.getElementById('alert').style.display = 오잉;
+  }
+
+  //function 작명(파라미터){}로 한개로 축약해서 열기,닫기 만들고 안내문구 다르게 뜨게 함.
+  //버튼1,2를 각 눌렀을 때 p알림창글이 '아이디입력','비번입력'뜨게하기 위해서 파라미터 사용해서 축약사용
+  //열기,닫기 버튼의 경우 이전시간에 배운 것을 그대로 활용 + 위에 title과 같이 사용하기 위해서 파라미터 2개 쓰면됨.
+  //우선 파라미터를 2개를 두고, 위에 아이디알림창('','')에 각각 파라미터 집어넣기.
+  //헷갈렸던 부분은 파라미터 2개를 어떻게 사용하냐였음. ''안에 파라미터를 넣고 , 콤바로 구분해야함 
+  //주의할 점은 파라미터 집어넣을 때는 = ''; 아니고 = 파라미터; 임. ''가 없음.
+
+
+  //밑에처럼 2개로 나뉘어서 할만한 코드를 위의 한개로 축약함
+  // function 아이디알림창(){ 
+  //   document.getElementById('title').innerHTML = '아이디입력하셈'; 
+  //   document.getElementById('alert').style.display = 'block'; 
+  // }
+
+  // function 비번알림창(){ 
+  //   document.getElementById('title').innerHTML = '비번입력하셈'; 
+  //   document.getElementById('alert').style.display = 'block'; 
+  // }
+
+
+  
+
+  //class명으로 찾기 getElementsByClassName()을 쓰면됨. but class명은 여러개가 존재할 수 있기에..id명은 중복x
+  //그래서 getElementsByClassName(title)[0]라고 쓰면 class명이 title인 것 중에 0번째 
+  
+
+</script>
+</body>
+</html>
