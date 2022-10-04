@@ -10,13 +10,14 @@
 </head>
 <body>
 
+  <!-- <div class="alert-login"> -->
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
       <button class="btn btn-danger" id="close">닫기</button>
     </div>
   </div> 
-
+<!-- </div> -->
 
   <button class="login-btn">로그인</button>
 
@@ -26,7 +27,28 @@
   crossorigin="anonymous"></script>
 
   <script>
-    
+    //숙제 내가 한 것 
+    // $('.login-btn').on('click',function(){
+    //   $('.alert-login').css('display','block');
+    // })
+
+    //diff : black-bg위에 div박스를 하나 더 뒀는데 그럴필요없었다. class덧붙이는 방법으로 코드짜지 못했다(확장성이 좋음).
+
+    //리뷰 > 로그인버튼 누르면 모달창 띄우기 >> 로그인버튼 누르면 show-modal 클래스를 저기 붙이기
+    // document.getElementsByClassName('login-btn')[0].addEventListener('click',function(){
+    //   document.getElementsByClassName('black-bg')[0].classList.add('show-modal');
+    // })
+
+      //classList.add 에서 addClass로 바뀜
+
+    $('.login-btn').on('click',function(){
+      $('.black-bg').addClass('show-modal');
+    })
+
+    $('#close').on('click',function(){
+      $('.black-bg').removeClass('show-modal');
+    })
+
 
 
   </script>
