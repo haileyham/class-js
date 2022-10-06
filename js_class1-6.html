@@ -7,12 +7,28 @@
   <title>1-6</title>
 </head>
 <body>
-  <button onclick="삼육구게임(3);"">d</button>
-  <button onclick="삼육구게임(4);"">d</button>
-  <button onclick="삼육구게임(9);"">d</button>
+  <button onclick="삼육구게임(3);">d</button>
+  <button onclick="삼육구게임(4);">d</button>
+  <button onclick="삼육구게임(9);">d</button>
+
+  <button onclick="합격인가(70,70);">합격인가1</button>
+  <button onclick="합격인가(30,100);">합격인가2</button>
+  <button onclick="합격인가(50,50);">합격인가3</button>
+
+  <button onclick="삼육구게임찐삼육구(3);">d</button>
+  <button onclick="삼육구게임찐삼육구(4);">d</button>
+  <button onclick="삼육구게임찐삼육구(6);">d</button>
+  <button onclick="삼육구게임찐삼육구(9);">d</button>
+
+  <button onclick="장난(100);">100</button>
+  <button onclick="장난(101);">101</button>
+  <button onclick="장난(0);">0</button>
 
 
-
+  <form action="#">
+    <input type="number" id="funny">
+    <button type="submit" id="send">전송</button>
+  </form>
 
   <script>
 
@@ -34,8 +50,82 @@
       }
     }
   
-    
+//시험점수 입력하면 합격 여부 알려주는 함수
+// "a가 40미만이거나 b가 40 미만일 경우엔 불합격 출력"
+// "그게 아니면 a + b 가 120 이상이면 합격을 출력.... a + b 가 120 미만이면 불합격 출력"
 
+//a<40 || b<40을 a,b <40으로 써서 결과값이 잘못나왔었음. 바보.
+
+    function 합격인가(a,b){
+      if(a<40 || b < 40){
+        console.log('불합격');
+      }else if(a+b < 120){
+        console.log('불합격');
+      }else{
+        console.log('합격');
+      }
+    }
+
+  // 위에서
+  // else if(a+b < 120){
+  // console.log('불합격');
+  // 이거를 a+b >= 120 합격으로 두는 것도 똑같음
+
+
+
+
+//   (응용) 원래의 369게임 룰을 적용하려면 어떻게 해야할까요?
+// 3의 배수에서 박수를 치는게 아니라 끝자리가 3,6,9로 끝나는 숫자라면 '박수'를 출력되게 하는겁니다. 
+// 이건 숫자의 마지막자리를 어떻게 파악할지 구글 검색해보면 쉽게 해결되니 답은 없습니다. 
+  document.getElementById('send').addEventListener('click', function 삼육구게임찐삼육구(num){
+      if(document.getElementById('funny').value%10 ==3 || 
+      document.getElementById('funny').value % 10 == 6 || 
+      document.getElementById('funny').value % 10 == 9){
+        console.log('박수');
+      }else{
+        console.log('통과');
+      }
+    })
+
+
+
+    function 삼육구게임찐삼육구(num){
+      if(num%10 ==3 || num % 10 == 6 || num % 10 == 9){
+        console.log('박수');
+      }else{
+        console.log('통과');
+      }
+    }
+
+    // for(var i=1; i<100; i++){
+    //     if(i%10==3 || i%10==6 || i%10==9){
+    //       console.log(i,"clap")
+    //     }
+    //   }
+
+
+
+
+
+
+//     (응용2) 합격판독기에 0에서 100사이 숫자가 아닌걸 입력하면 장난치지 말라고 alert를 띄우려면 어떻게 코드짜야할까요?
+// 이것도 간단하게 if문 알아서 추가해봅시다. 
+
+      function 장난(num){
+        if(num < 0 || num > 100){
+          alert('장난치지망');
+        }
+      }
+
+
+      document.getElementById('send').addEventListener('click',function(){
+        if(document.getElementById('funny').value<0 || document.getElementById('funny').value>100){
+          alert('장난치지망');
+        }
+      })
+
+//혼자 짜는 것은 참 어렵따... 난 머리가 왜 안굴러갈까 ㅠㅠㅠ흑흑흑...
+//이전시간에 배운 form안에 입력창 이용해서 만들었다. 이것도 찾아보고 응용했다 ㅠ바보야
 
   </script>
 </body>
