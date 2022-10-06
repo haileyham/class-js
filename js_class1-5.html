@@ -161,21 +161,25 @@ $('#send').on('click',function(e){
 
 
 //new 
+//input에서만 일어나는 input이벤트
 //유저가 입력하여 document.getElementById('email')값이 변할때마다 실행됨
 document.getElementById('email').addEventListener('input',function(){
   console.log('안녕')
 })
 //유저가 입력하여 document.getElementById('email')값이 포커스를 잃을때 발생(값입력후 포인트 다른곳 찍을때)
 document.getElementById('email').addEventListener('change',function(){
-  
+  console.log('안녕')
 })
 //위 2개는 나중에 이렇게 활용가능 pw입력하는 도중에 4자 이상 입력해야한다고 계속 띄울때
 
 
 //사실 if문안에는 true/false 넣어야 잘 작동함. >> boolean타입
 //다름을 비교할 때  :  !=
+//엄격한 비교 ===
 
-
+//true로 인식하는 자료들  : 0제외 숫자, '문자', [],{}
+//false로 인식하는 자료들 : 0, '', null, undefined, NaN
+//조건 2개 이상을 동시에 비교하고 싶다면 && ||연산자
 
 
 
