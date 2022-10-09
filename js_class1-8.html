@@ -9,8 +9,9 @@
 </head>
 <body>
   
+  <div class="bg">
   <span class="badge bg-dark">Dark 🔄</span>
-
+  </div>
 
 
 
@@ -61,14 +62,19 @@
 
   var count = 0;
   
-
   $('.badge').on('click',function(){
+    // count++;
+    if(count % 2 == 0){
+      // $('.bg').addclass('bg-dark');
+      $('.bg').addClass('bg-dark');
+    } else{
+      $('.bg').removeClass('bg-dark');
+    }
     count++;
-    console.log(count);
   })
 
   //count++카운트라는 변수에 1씩 더해주세요
-
+  // == 헷갈리지 말기 (=해서 오류났었음)
 
 
 
