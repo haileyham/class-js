@@ -60,24 +60,40 @@
 
 // 변수에 +1하는법  : 변수++ , 변수+=1, 변수=변수+1
 
+  // var count = 0;
+  
+  // $('.badge').on('click',function(){
+  //   // count++;
+  //   if(count % 2 == 0){
+  //     // $('.bg').addclass('bg-dark');
+  //     $('.bg').addClass('bg-dark');
+  //   } else{
+  //     $('.bg').removeClass('bg-dark');
+  //   }
+  //   count++;
+  // })
+
+  //count++카운트라는 변수에 1씩 더해주세요
+  // == 헷갈리지 말기 (=해서 오류났었음)
+  // 3 % 2 == 1 (홀수)
+  // 7 % 2 == 1 (홀수)
+  // count % 2 == 1 (홀수)
+
   var count = 0;
   
   $('.badge').on('click',function(){
     // count++;
-    if(count % 2 == 0){
+    if(count % 2 == 1){
       // $('.bg').addclass('bg-dark');
-      $('.bg').addClass('bg-dark');
+      $('.badge').html('Light🔄');
     } else{
-      $('.bg').removeClass('bg-dark');
+      $('.badge').html('Dark🔄');
     }
     count++;
   })
 
-  //count++카운트라는 변수에 1씩 더해주세요
-  // == 헷갈리지 말기 (=해서 오류났었음)
-
-
-
+  //class div박스 아니고 span태그 class에다가 걸기.
+  //class추가로 색 바꾸기 말고 html문서에서 바꾸기
 
 
 </script>
