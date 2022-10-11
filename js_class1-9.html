@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-9</title>
+</head>
+<body>
+
+  Q1. 변수 만들어보기(재할당 가능or불가)
+  <script>
+    let age = 9;
+    const place = 'Seoul';
+  </script>
+
+
+
+  Q2. 변수 동작않는 이유 찾기
+  <script>
+    var name = 'park';
+    var id = 0;
+  
+    function showName(){
+      var name = 'kim';
+      var id = 1;
+      console.log(name);
+    }
+  
+    showName();
+    console.log(id);
+</script>
+console.log(name);
+은 name출력
+
+console.log(id);
+은 1이 아닌 0출력 
+>>이유
+function 내에 있는 변수는 밖에서 출력할 경우 
+function내에 있는것이 아닌 위에서 선언한 0으로 출력
+(함수 안에 있던 변수는 바깥으로 탈출하지 않음.)
+
+
+
+
+Q3. 이자율 계산하기
+첫 예금액 5만원 미만이면 이율 연 15퍼센트
+첫 예금액 5만원 이상이면 이율 연 20퍼센트
+(1) 변수에 예금액을 넣으면
+(2) 2년 후의 총 예금액을 자동으로 콘솔창에 출력해주는 기능을 자바스크립트로 짜기
+
+(동작예시)
+var 예금액이라는 변수에 60000을 집어넣으면 86400 이게 콘솔창에 출력되어야 합니다. (이자 20%가 2번 붙음)
+var 예금액이라는 변수에 10000을 집어넣으면 13225 이게 콘솔창에 출력되어야 합니다. (이자 15%가 2번 붙음)
+
+(힌트) 
+자바스크립트에선 + - / * 연산자로 사칙연산이 가능합니다.
+
+<script>
+  var 예금액 = 60000;
+  var 예금액 = 10000;
+
+  var 미래예금액 = 0;
+
+  if(예금액 >= 50000){
+    // 예금액 * 1.2 * 1.2 = 미래예금액;    오류남. 순서 바꿔야함.
+    미래예금액 = 예금액 * 1.2 * 1.2;
+  } else{
+    미래예금액 = 예금액 * 1.15 * 1.15;
+  }
+  
+  console.log(미래예금액);
+</script>
+
+
+
+
+
+Q4. 이 카페 커피 리필 규정으로 최대 마실 수 있는 커피양 계산 
+방금 마신 커피의 3분의 2만큼 총 2번 리필해주는 카페가 있습니다.
+예를 들면 처음 커피를 90ml 주문하면 첫 리필은 60ml를 해주며, 그 다음 리필은 40ml를 해주는 카페입니다.
+그럼 처음 주문한 커피 양에 따라서 최대한 마실 수 있는 커피를 콘솔창에 계산해주는 코드를 작성해봅시다.
+
+(동작예시)
+var first에 360을 집어넣으면 위 코드를 실행했을 때 콘솔창에 760이 출력되어야합니다. (360 + 240 + 160)
+
+<script>
+  var first = 360;
+
+  second = first * 2/3;
+  third = second * 2/3;
+  console.log(total) = first+second+third;
+
+  밑에꺼
+
+  var first = 360;
+  var total = 0;
+
+  total = first * 2/3 + first * 2/3 * 2/3;
+  console.log(total);
+
+</script>
+
+
+
+
+Q5. 간단한 퀴즈 UI 만들어보기
+
+<p>태조 이성계가 태어난 년도는?</p>
+<input type="text" id="answer">
+<button id="send-answer">제출</button>
+<script>
+  여기에 기능 알아서 만드십시오
+</script>
+  
+유저가 <input>에 답을 적고 제출버튼을 누를 수 있는 퀴즈 UI 입니다.
+1. 유저가 답을 맞추면 alert('성공');
+2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아') 를 띄워봅시다.
+하단에 자바스크립트 작성하면 됩니다.
+(위 문제의 답은 1335입니다)
+
+
+<script>
+  // $('#send-answer').on('click',function(){
+  //   if($('#answer') = 1335){
+  //     alert = '성공';
+  //   }else{
+  //     alert = '바봉';
+  //   }
+  // })
+
+
+  // var count = 0;
+
+  // $('#send-answer').on('click',function(){
+  //   count ++ 1;
+  //   var 유저답안 = document.getElementById('answer').value;
+  //   if(유저답안 = '1335'){
+  //     alert('성공')
+  //   }else if(count >= 3 && 유저답안 != '1335'){
+  //     alert('바봉')
+  //   }
+  // });
+//위에 다 안되는것들.
+
+
+
+  var count = 0;
+
+document.getElementById('send-answer').addEventListener('click',function(){
+  count += 1;
+  var 유저답안 = document.getElementById('answer').value;
+  if (유저답안 == '1335'){
+    alert('성공')
+  } else if (count >= 3 && 유저답안 != '1335'){
+    alert('바봉')
+  }
+});
+
+//else if(조건식)을 else로써서 자꾸 오류 났었음. ㅠㅠ
+//count ++ 1 은 오류남..바보얌 count ++ 이다 ㅠㅠ
+// count ++ 이거나 count += 1 이거나
+//근데 왜 jQuery안써지지? 오류남 ㅠㅠ
+
+// Q. 자주 물을 것 같은 질문
+// var 유저답안 = document.querySelector('#answer').value;
+// 이걸 이벤트리스너 바깥에 넣으면 왜 안되나요?
+
+
+// A. 변수를 언제 만들지 잘 결정해야합니다.
+// <script>안에 그냥 있는 코드는 새로고침시 1회 실행됩니다.
+// 이벤트리스너 안에 있는 코드는 이벤트 발동시 1회 실행됩니다. 
+
+</script>
+
+
+
+
+</body>
+</html>
