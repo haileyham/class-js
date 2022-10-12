@@ -11,13 +11,111 @@
 </head>
 <body>
   
+  <div class="alert alert-danger">
+    5초 이내 구매시 사은품 증정!
+  </div>
 
+
+    
+  <div class="alert-danger" id="box" >
+    <span id="num">5</span>초 이내 구매시 사은품 증정!
+  </div>
 
 
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+  <script>
+
+// X초후 코드 실행하려면
+// setTimeout(function(){실행할코드},기다릴시간)
+// 첫번째 파라미터는 무조건 콜백함수
+// 두번째 파라미터는 초단위(ms)로  1000ms = 1초 
+
+
+    // setTimeout(function(){console.log('안녕')}, 1000)
+
+    setTimeout(function(){
+      $('.alert').hide();
+    }, 5000);
+
+    // jQuery함수인 .hide()는 display:none 준거랑 비슷하게 동작
+
+    setInterval(function(){
+      console.log('안녕');
+    }, 1000);
+
+    //1초마다 안녕출력
+
+
+
+
+    // if var function  
+    // 자바스크립트 문법
+
+
+    // document.querySelector()
+    // setTimeout()
+    // alert()
+    // 브라우저 사용법 : Web Browser API
+
+    // 웹개발을 잘하고 싶으면 브라우저 사용법을 많이 아는 것이 좋음. 자바스크립트 문법만 배우면 할 수 있는게 없음.
+    //
+
+
+
+    // setTimeout(function(){},1000)
+    setTimeout(함수,1000)
+
+    function 함수(){
+      console.log('hi')
+    }
+    //콜백함수자리엔 아무함수나 들어갈수있음. 만들어둔 함수 넣을 수 있음
+
+    // addEventListener(function(){})
+    // addEventListener(함수)
+
+
+
+
+
+
+//     오늘의 숙제:
+// 위에서 만든 <div>안에 "5초 이내 구매시 사은품 증정" 이라는 문자가 있습니다.
+// 1초마다 5라는 문자를 1씩 감소시켜봅시다.
+// 0이 되면 <div>를 안보이게 처리합시다. 
+
+// (힌트) 5라는 문자만 <span>5</span> 이걸로 감싸면 html 조작하기 쉬워집니다.
+
+// (참고) 타이머를 삭제하고 싶으면
+// var 타이머 = setInterval(어쩌구);
+// 이렇게 변수에 저장해둔 다음
+// 타이머 삭제하고 싶을 때 clearTimeout(타이머) 이 코드 실행하면 됩니다.
+
+    var count = 5;
+    
+    setInterval(function(){
+      count-=1;
+      if(count >= 0){
+        document.querySelector('#num').innerHTML = count;
+      }else{
+        document.querySelector('#box').style.display='none';
+        clearTimeout(count);
+      }
+    },1000);
+
+    //  [변수] = setTimeout([함수명], [함수가 실행될 시간]);
+    //clearTimeout([변수]);
+
+    //왜 나는 혼자 짜지 못하고 온갖 검색으로 할 수밖에 없는가...ㅠ 하..
+    // count라는 변수에 숫자 5를 먼저 집어넣고,
+    // setInterval안의 콜백함수에 count변수를 1씩 다운시켜주고,
+    // if 문으로 count가 1씩 줄을때마다 #num숫자를 count로 바꿔주고
+    // (span으로 묶은 숫자를 count로 나타내는 것임)
+    // else문으로 div박스를 안보이게 해주고, clearTimeout해주기
+
+  </script>
 
 </body>
 </html>

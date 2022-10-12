@@ -119,6 +119,8 @@ Q5. 간단한 퀴즈 UI 만들어보기
 하단에 자바스크립트 작성하면 됩니다.
 (위 문제의 답은 1335입니다)
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 <script>
   // $('#send-answer').on('click',function(){
@@ -144,6 +146,7 @@ Q5. 간단한 퀴즈 UI 만들어보기
 //위에 다 안되는것들.
 
 
+//밑에 두개다 작동
 
   var count = 0;
 
@@ -157,10 +160,28 @@ document.getElementById('send-answer').addEventListener('click',function(){
   }
 });
 
+
+// var count = 0;
+
+// $('#send-answer').on('click',function(){
+//   count += 1;
+//   var 유저답안 = $('#answer').val;
+//   if (유저답안 == '1335'){
+//     alert('성공')
+//   } else if (count >= 3 && 유저답안 != '1335'){
+//     alert('바봉')
+//   }
+// });
+
+
+
 // else if(조건식)을 else로써서 자꾸 오류 났었음. ㅠㅠ
 // count ++ 1 은 오류남..바보얌 count ++ 이다 ㅠㅠ
 // count ++ 이거나 count += 1 이거나
 // 근데 왜 jQuery안써지지? 오류남 ㅠㅠ
+// 하 징짜 바보 ㅠㅠ...다음 강의듣다가 갑자기 생각남. jQuery주소 안넣어서그럼...ㅠ;;ㅋㅋㅋ징짜바보
+
+
 
 // Q. 자주 물을 것 같은 질문
 // var 유저답안 = document.querySelector('#answer').value;
