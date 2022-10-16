@@ -29,3 +29,54 @@ body{
   cursor: pointer;
 }
 
+
+@media screen and (max-width:576px){
+  .main-title{
+    margin:150px 50px;
+    font-size: 13px;
+    min-width:200px;
+  }  
+}
+
+.nav-container{
+  height:50px;
+  background-color: pink;
+  align-items: center;
+  display:flex;
+  padding:10px 30px;
+  font-size: 20px;
+}
+
+.nav-item{
+  text-align: center;
+  color:white;
+}
+
+.nav-item button{
+  border:none;
+  background: rgba(255,255,255,0);;
+  color:white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-menu-slide{
+  height:130px;
+  padding:5px 20px 25px 20px;
+  background: rgb(255, 244, 244);
+  border:1px solid pink;
+  display:none;
+}
+
+.nav-menu-slide p{
+  border-bottom: 1px dashed pink;
+  font-size: 17px;
+  color:pink;
+  text-align: right;
+  padding: 0px 20px 10px 0px;
+  cursor: pointer;
+}
+
+.show{
+  display:block;
+}

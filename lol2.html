@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/lol.css" rel="stylesheet">
+  <title>lol2</title>
+</head>
+<body>
+  <div class="nav-container">
+    <div class="nav-item">
+      <p>HamKong</p>
+    </div>
+    <div class="nav-item" style="flex-grow:1;"></div>
+    <div class="nav-item">
+      <button>Album</button>
+    </div>
+    <div class="nav-item">
+      <button id="nav-menu">Menu</button>
+    </div>
+  </div>
+  <div class="nav-menu-slide" id="ddi">
+    <p id="hi">HamKong</p>
+    <p id="hello">Haru</p>
+    <p id="good" style="border:none;">Fam</p>
+  </div>
+
+
+
+  <div class="main2-container">
+    <h1></h1>
+  </div>
+
+
+
+  <script>
+    // document.getElementById('nav-menu').addEventListener('click',function(){
+    //   document.getElementById('ddi').style.display = 'block';
+    // })
+    document.getElementById('nav-menu').addEventListener('click',function(){
+      document.getElementById('ddi').classList.toggle('show');
+    })
+    document.getElementById('hi').addEventListener('click',function(){
+      alert('loading...1');
+})
+    document.getElementById('hello').addEventListener('click',function(){
+      alert('loading...2');
+})
+    document.getElementById('good').addEventListener('click',function(){
+      alert('loading...3');
+})
+  </script>
+
+
+
+
+</body>
+</html>
