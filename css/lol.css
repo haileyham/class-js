@@ -61,11 +61,17 @@ body{
 }
 
 .nav-menu-slide{
-  height:130px;
+  /* height:130px; */
+  height: 0px;
+  /* 밑으로 슬라이드 내려오는 움직임 주기위해서는 첫단계는 0px로 되어있어야함 */
   padding:5px 20px 25px 20px;
   background: rgb(255, 244, 244);
   border:1px solid pink;
-  display:none;
+  /* display:none; */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+  /* 단순히 켰다껐다 말고, 단순 애니메이션 효과주기위해선, 첫화면이 투명도0에서 나중에 1로 변하는 것으로, display보다 visibility: 로; */
 }
 
 .nav-menu-slide p{
@@ -78,5 +84,8 @@ body{
 }
 
 .show{
-  display:block;
+  /* display:block; */
+  height:140px;
+  visibility: visible;
+  opacity: 1;
 }
