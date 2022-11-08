@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/practice_1100.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="alert-box" id="alertBox">알림창
+    <button onclick="document.getElementById('alertBox').style.display = 'none';">닫기</button>
+  </div>
+  <button onclick="document.getElementById('alertBox').style.display = 'block';">버튼</button>
+
+<br>
+<br>
+<br>
+
+  <div class="alert-box" id="alertBox2">알림창
+    <button onclick="알림창닫기()">close</button>
+  </div>
+  <button onclick="알림창열기()">button</button>
+
+<br>
+<br>
+<br>
+
+  <div class="alert-box" id="alertBox3">알림창
+    <button onclick="알림창('none')">close~</button>
+  </div>
+  <button onclick="알림창('block')">button~</button>
+
+
+  <br>
+  <br>
+  <br>
+  
+    <div class="alert-box" id="alertBox4">
+      <p id="alertP">알림창</p>
+      <button onclick="알림창2('none')">close!</button>
+    </div>
+    <button onclick="알림창2('block')">button!</button>
+  
+  <br>
+  <br>
+  <br>
+  
+    <div class="alert-box" id="alertBox5">
+      <p id="alertP">알림창</p>
+      <button onclick="알림창3('','none')">close</button>
+    </div>
+    <button onclick="알림창3('아이디입력','block')">button1</button>
+    <button onclick="알림창3('비번입력','block')">button2</button>
+  
+
+  <br>
+  <br>
+  <br>
+  
+    <div class="alert-box" id="alertBox6">
+      <p id="alertPP">알림창</p>
+      <button id="buttonClose">close</button>
+    </div>
+    <button id="buttonOpen1">button1~</button>
+    <button id="buttonOpen2">button2~</button>
+  
+
+
+
+  
+  <script>
+    function 알림창열기(){
+      document.getElementById('alertBox2').style.display = 'block';
+    }
+    function 알림창닫기(){
+      document.getElementById('alertBox2').style.display = 'none';
+    }
+    function 알림창(뿅){
+      document.getElementById('alertBox3').style.display = 뿅;
+    }
+    function 알림창2(뿅){
+      document.getElementById('alertP').innerHTML = '아이디입력행';
+      document.getElementById('alertBox4').style.display = 뿅;
+    }
+
+    //파라미터 2개 사용하여 간단하게 만들어보기
+    function 알림창3(호이,뿅){
+      document.getElementById('alertP').innerHTML = 호이;
+      document.getElementById('alertBox5').style.display = 뿅;
+    }
+
+
+    //스크립트가 지저분하지만 스크립트에서 다 끝내기
+    document.getElementById('buttonOpen1').addEventListener('click',function(){
+      document.getElementById('alertPP').innerHTML = '아이디입력';
+      document.getElementById('alertBox6').style.display = 'block';
+    })
+
+    document.getElementById('buttonOpen2').addEventListener('click',function(){
+      document.getElementById('alertPP').innerHTML = '비번입력';
+      document.getElementById('alertBox6').style.display = 'block';
+    })
+
+    document.getElementById('buttonClose').addEventListener('click',function(){
+      document.getElementById('alertBox6').style.display = 'none';
+    })
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+.alert-box {
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  display: none;
+} 
+
+/*예쁜 연보라색 버튼*/
+button{
+  background: rgba(190,150,255,0.6);
+  border: 0px;
+  border-radius: 5px;
+  padding:5px;
+  color:white;
+}
+
+.list-group{
+  display: none;
+}
+.show{
+  display: block;
+}
