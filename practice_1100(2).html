@@ -10,6 +10,24 @@
 </head>
 <body>
   
+  <div class="black-bg">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+      <form action="success.html">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="pw">
+          </div>
+          <button type="submit" class="btn btn-primary">전송</button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form> 
+    </div>
+  </div> 
+
+
+
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Navbar</span>
@@ -27,6 +45,25 @@
     <li class="list-group-item">And a fifth one</li>
   </ul> 
 
+  <p class="hello">안녕</p>
+<button class="test-btn">버튼</button>
+<button id="login">로그인</button>
+
+<span class="badge bg-dark" id="darkLight">Dark 🔄</span>
+
+
+
+
+<div class="alert alert-danger" id="alert1">
+  5초 이내 구매시 사은품 증정
+</div>
+
+<div class="alert alert-danger" id="alert2">
+  <span id="alert3">5</span>초 이내 구매시 사은품 증정
+</div>
+
+
+
 
 
 
@@ -34,14 +71,120 @@
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
+
+
   <script>
 
+    // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click',function(){
+    //   document.getElementsByClassName('list-group')[0].classList.add('show');
+    // })
+
+    // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click',function(){
+    //   document.getElementsByClassName('list-group')[0].classList.toggle('show');
+    // })
+//add 말고 toggle로 클릭할 때마다 있고, 없고
+
+    $('.navbar-toggler').on('click',function(){
+      $('.list-group').toggleClass('show');
+    })
+//JQuery로 변경
+
+
+$('.test-btn').on('click', function(){
+    $('.hello').slideToggle();
+  });
+//.hide() .slideUp() .fadeOut()
+//.show() .slideDown() .fadeIn()
+//toggle() .slideToggle() .fadeToggle()
+
+
+$('#login').on('click',function(){
+  $('.black-bg').addClass('showw');
+})
+//addClass를 toggle로 해놓으며녀 밑에 removeClass해도 밑에꺼 작동x 주의하길!
+$('#close').on('click',function(){
+  $('.black-bg').removeClass('showw');
+})
+
+
+
+  $('form').on('submit',function(e){
+    if($('.form-control').val() == ''){
+      e.preventDefault();
+      alert('아이디 입력하세요');
+    }
+    if($('#pw').val() == ''){
+      e.preventDefault();
+      alert('비밀번호 입력하세요');
+    }
+    if(document.getElementById('pw').value.length < 6){
+      e.preventDefault();
+      alert('pw6글자이상 입력하세요');
+    }
+  });
+//val() 가로 까먹지 말기. 코드 완성해서 짜기. form에다가 코드짜기. submit대신에 click가능
+//document.getElementById('email').value == '' 동일임.
+//이벤트함수 콜백함수에 e파라미터 추가하고 e.preventDefault(); 써서 폼전송 막기
+
+
+var 모드 = 0;
+
+  $('#darkLight').on('click',function(){
+    모드 ++;
+    if(모드 % 2 == 1){
+      document.getElementById('darkLight').innerHTML = 'Light 🔄';}
+    else if (모드 %2 == 0){
+      document.getElementById('darkLight').innerHTML = 'Dark 🔄';
+    }
+  });
+//모드 += 1; 해도됨
+// else if() 말고 그냥 else해도됨 (대신 else쓰면 ()조건안씀)
+
+
+
+
+
+// setTimeout(function(){ 
+//   document.getElementsByClassName('alert')[0].remove();
+// }, 5000);
+
+// setTimeout(function(){
+//     $('#alert1').hide();
+//   }, 5000);
+
+  setTimeout(함수, 5000);
+
+  function 함수(){
+    $('#alert1').hide();
+  }
+//위에랑 똑같은 것, setTimeout은 파라미터 안에 콜백함수필요로함, 콜백함수자리에 코드 더러우면 다른곳에 함수 만들어놓고 콜백함수자리에 이름만 넣어서 코드짜도됨.
+
+
+
+
+
+  var count = 5 ;
+
+  setInterval(function(){ 
+    count -= 1;
+    if(count >= 1){
+      $('#alert3').html(count);
+    }else{
+        document.querySelector('#alert2').style.display='none';
+        clearTimeout(count);}
+}, 1000);
+
+//document.querySelector('#num').innerHTML = count;
+// count < 5가 아닌이유는 : -1, -2까지 계속해서 가기때문
 
 
 
 
 
 
+
+
+  
   </script>
 </body>
 </html>
