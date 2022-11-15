@@ -9,13 +9,155 @@
 </head>
 <body>
   
+  <!-- * 애니메이션만들기4스텝(첫화면/최종화면/언제변할지js코드짜기/transition추가)
+  넘기는 슬라이드를 만들기 위해서 css에다가 width 300주고(이미지3개 길게 늘린다 생각하고 각각 옆으로 불러오기)
+  JS로는 버튼으로 transition 추가하기 -->
 
+  <!-- 코드 잘 짜고 싶으면
+  UI 만드는 4step/
+  배운 자바스크립트 문법 어디에 쓰는지/
+  한글로 코드 먼저 짜보고, 코드짜보기 -->
 
+  <div style="overflow:hidden">
+  <div class="slide-container">
+    <div class="slide-box">
+      <img src="img/car1.png">
+    </div>
+    <div class="slide-box">
+      <img src="img/car2.png">
+    </div>
+    <div class="slide-box">
+      <img src="img/car3.png">
+    </div>
+  </div>
+</div>
+
+<button class="slide-1">1</button>
+<button class="slide-2">2</button>
+<button class="slide-3">3</button>
+<button class="previous">이전</button>
+<button class="next">다음</button>
 
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+  <script>
+
+    $('.slide-2').on('click',function(){
+      $('.slide-container').css('transform', 'translateX(-100vw)');
+    });
+
+    // document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-100vw)'
+    //위랑 동일함. 생자바스크립트일 경우 
+
+    $('.slide-3').on('click',function(){
+      $('.slide-container').css('transform', 'translateX(-200vw)');
+    });
+
+    $('.slide-1').on('click',function(){
+      $('.slide-container').css('transform', 'translateX(0vw)');
+    });
+
+
+
+
+
+    // 다음버튼 만들기[한글로 먼저 코드 짜보기]
+    // 다음버튼 누르면, 
+    // 지금 보이는 사진이 1이면 2번 사진 보여주세요 > if문
+    // 지금 보이는 사진이 2이면 3번 사진 보여주세요
+
+
+    // $('.next').on('click',function(){
+    //   if(지금보이는사진이 1이면){
+    //     2번 사진 보여주세요
+    //   }
+    // });
+
+    var 지금사진 = 1;
+    
+    // $('.next').on('click',function(){
+    //   if(지금사진 == 1){
+    //     $('.slide-container').css('transform', 'translateX(-100vw)');
+    //     지금사진 ++;
+    //   }
+    //   else if(지금사진 == 2){
+    //     $('.slide-container').css('transform', 'translateX(-200vw)');
+    //     지금사진 ++;
+    //   }
+    // });
+
+    // 변수에 지금사진 1을 집어넣고 
+    // 지금사진 1일 경우 -100vw로 다음사진 넘어가면서 지금사진은 2를 준다.
+    // 그리고 지금사진 2가 되면 또 -200vw으로 됨. 
+    // 이전,다음 버튼을 연결해서 사용하려면, ++과 --는 마지막꺼에도 써야함
+    // 그래야 1-3 변경될때마다 지금사진도 1-3으로 바뀜
+
+    //위에꺼는 if 지금사진 1이면, 2로가주고 / 지금사진 2 만들어줘
+    // if 지금사진 2이면, 3으로 가줘 / 지금사진 3 만들어줘
+    //밑에꺼는 if 지금사진 3이면, 2로가주고 / 지금사진 2 만들어줘
+    // if 지금사진 2이면, 1로 가줘 / 지금사진 1 만들어줘
+
+
+    // $('.previous').on('click',function(){
+    //   if(지금사진 == 3){
+    //     $('.slide-container').css('transform', 'translateX(-100vw)');
+    //     지금사진 --;
+    //   }
+    //   else if(지금사진 == 2){
+    //     $('.slide-container').css('transform', 'translateX(0vw)');
+    //     지금사진 --;
+    //   }
+    // });
+
+
+
+
+    //확장성 있는 코드로 만들기 (만약 3개의 사진에서 4개의 사진이 된다면
+    // 위에 있는 코드로는 계속해서 코드를 추가해줘야함.)
+    //하지만 위에 코드에서 공통적으로 translateX(-#00vw)#값만 바뀌고있음
+    //공통점을 찾아서 var변수를 집어넣으면될듯.
+    //변수는 코드 중간에 넣어도 작동함
+
+
+    $('.next').on('click',function(){
+        $('.slide-container').css('transform', 'translateX(-'+지금사진+'00vw)');
+        지금사진 ++;
+      }
+    );
+
+    //문자 중간에 변수 넣을때 'url('+지금사진+')'' 이런식?
+
+//     $('.previous').on('click',function(){
+//         $('.slide-container').css('transform', 'translateX(-'+지금사진+'00vw)');
+//         지금사진 --;
+//       }
+// );
+//실패
+
+//   document.getElementById('next')[0].addEventListener('click',function(){
+//         document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(`-${지금사진-1}00vw`)'
+//         지금사진 --;
+//       }
+// );
+//실패
+
+$('.previous').on('click',function(){
+        $('.slide-container').css('transform', `translateX(-${지금사진 -2}00vw)`);
+        지금사진 --;
+      }
+);
+//성공(인터넷검색)https://coonihong.tistory.com/62
+
+//아 너무어렵다..
+//if문에다가 조건으로 (지금사진 < 2){이동}이런식으로 만들어야하나
+//이부분은 나중에 다시 해보기로 !
+//나중에 해야할 부분들 1. (2)버튼 눌렀을때 다음버튼 누르고 동작하기위해서
+//지금사진++과 --의 마지노선 정하기
+
+
+  </script>
 
 </body>
 </html>
